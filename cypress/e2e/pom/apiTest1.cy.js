@@ -12,7 +12,11 @@ describe('API Tests', () => {
       route: '226',
       from: 'directv-2agus'
     };
+    // Imprimir el endpoint completo
+    console.log(`Realizando solicitud a: ${apiHelper.apiUrl}${endpoint}`);
 
+    // Imprimir los parámetros
+    console.log('Parámetros de la solicitud:', params);
     apiHelper.sendRequest('/ionikAPI', params)
       .then((response) => {
         expect(response.status).to.eq(200); // Verifica si la respuesta es exitosa (código 200)
